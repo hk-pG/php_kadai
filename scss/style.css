@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_Black";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf");
+}
+
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_ExtraBold";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_Bold";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf");
+}
+
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_Medium";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf");
+}
+
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_Regular";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf");
+}
+
+@font-face {
+  font-family: "M_PLUS_Rounded_1c_Thin";
+  src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Thin.ttf");
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  padding: 1em 1.5em;
+}
+
+header h1 {
+  font-family: "M_PLUS_Rounded_1c_Medium";
+}
+/*# sourceMappingURL=style.css.map */
