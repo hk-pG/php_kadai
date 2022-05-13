@@ -1,5 +1,9 @@
 @import './fonts.scss';
 
+html {
+	background-color: #fff;
+}
+
 body {
 	margin: 0;
 }
@@ -7,10 +11,6 @@ body {
 h1 {
 	font-size: 2.5em;
 	font-weight: bold;
-}
-
-input {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -24,33 +24,41 @@ header {
 }
 
 main {
-	min-width: 90vw;
+	background-color: rgb(245, 248, 250);
+	margin: 0 auto;
+	display: flex;
+
 	form {
-		.form-contents {
-			display: flex;
-			flex-direction: column;
+		input {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 		}
 
-		.form-content {
-			display: flex;
-			flex-direction: row;
-			min-height: fit-content;
-			padding: 0.25em;
+		textarea {
+			border-radius: 10px;
+			border: 1px solid #000;
+		}
 
-			.mail-tag {
-				font-size: 1em;
-				font-family: 'M_PLUS_Rounded_1c_Medium';
-				min-width: fit-content;
-				width: 5rem;
+		button {
+			$button-color: rgb(115, 152, 208);
+			transition: 0.2s;
+			padding: 5px 10px;
+			color: $button-color;
+			border: 1px solid $button-color;
+			border-radius: 30px;
+			&:hover {
+				background-color: $button-color;
+				color: #fff;
+				border-radius: 0px;
+				position: relative;
+				top: 1px;
+				right: 1px;
+				box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 			}
-
-			input {
-				width: 20vw;
-				min-width: fit-content;
-			}
-
-			input::placeholder {
-				color: rgba(0, 0, 0, 0.5);
+			&:active {
+				position: relative;
+				top: 1px;
+				right: 1px;
+				box-shadow: 0;
 			}
 		}
 	}
