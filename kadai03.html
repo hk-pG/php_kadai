@@ -20,22 +20,41 @@
 					<img src="./scss/icons/mail_logo_title.png" alt="" />
 				</a>
 			</div>
-			<div id="header-date"></div>
 		</header>
 		<main>
 			<form action="./kadai03.php" method="get">
-				<div class="input-area">
-					<span class="mail-from">From</span>
-					<input type="email" name="" id="from" />
-				</div>
-				<div class="input-area">
-					<span class="mail-to">to</span>
-					<input type="email" name="" id="to" />
-				</div>
-				<div class="input-area">
-					<span class="main-content">本文</span>
-					<textarea name="" id="" cols="30" rows="10"></textarea>
-				</div>
+				<section class="form-contents">
+					<div class="form-content">
+						<span class="mail-from mail-tag">From</span>
+						<input
+							type="email"
+							name=""
+							id="from"
+							required
+							placeholder="あなた@gmail.com"
+						/>
+					</div>
+
+					<div class="form-content">
+						<span class="mail-to mail-tag">to</span>
+						<input
+							type="email"
+							name=""
+							id="to"
+							required
+							placeholder="宛先@gmail.com"
+						/>
+					</div>
+
+					<div class="form-content">
+						<span class="mail-tag">件名</span>
+						<input type="text" name="" id="title" placeholder="御要件" />
+					</div>
+
+					<span class="main-content mail-tag">本文</span>
+					<textarea name="" id="" cols="30" rows="10" required></textarea>
+					<button type="submit">送信</button>
+				</section>
 			</form>
 		</main>
 	</body>

@@ -28,9 +28,17 @@
   src: url("./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Thin.ttf");
 }
 
+body {
+  margin: 0;
+}
+
 h1 {
   font-size: 2.5em;
   font-weight: bold;
+}
+
+input {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -50,13 +58,63 @@ header {
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  font-family: 'M_PLUS_Rounded_1c_Medium';
+main {
+  min-width: 90vw;
 }
 
-header #header-date {
+main form .form-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main form .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  padding: 0.25em;
+}
+
+main form .form-content .mail-tag {
+  font-size: 1em;
   font-family: 'M_PLUS_Rounded_1c_Medium';
-  font-weight: 600;
-  font-size: 1.2em;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 5rem;
+}
+
+main form .form-content input {
+  width: 20vw;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+main form .form-content input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+main form .form-content input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+main form .form-content input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+main form .form-content input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
