@@ -2,6 +2,8 @@
 $x = $_GET['a'];
 $y = $_GET['b'];
 $operator = $_GET['operator'];
+$is_calc_success = true;
+
 
 switch ($operator) {
 	case '+':
@@ -17,7 +19,11 @@ switch ($operator) {
 		break;
 
 	case '/':
-		$z = $x / $y;
+		if ($y == 0) {
+			$is_calc_success = false;
+		} else {
+			$z = $x / $y;
+		}
 		break;
 
 	default:
@@ -33,14 +39,14 @@ switch ($operator) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 	<title>
-		答えは<?= $z ?>
+		<?= $is_calc_success ? "答えは" . $z : "計算に失敗しました" ?>
 	</title>
 </head>
 
 <body>
-	<?= "$x$operator$y=$z<br />" ?>
+	<?= $is_calc_success ? "$x$operator$y=$z<br />" : "計算に失敗しました"  ?>
 </body>
 
 </html>

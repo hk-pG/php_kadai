@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACJ,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACV;;AAED,AAAA,IAAI,CAAC;EACJ,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACV;;AAED,AAAA,MAAM,CAAC;EACN,gBAAgB,EAAE,OAAiB;CACnC",
+    "sources": [
+        "kadai01.scss"
+    ],
+    "names": [],
+    "file": "kadai01.css"
+}
