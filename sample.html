@@ -1,0 +1,135 @@
+<form
+	action="/norikae/cgi/nori.cgi"
+	method="get"
+	name="fm_nori"
+	id="fm_nori"
+	class="fmmd_Normal"
+>
+	<fieldset id="search" class="search_norikae">
+		<input type="hidden" name="rf" value="top" />
+		<input type="hidden" name="eok1" value="" />
+		<input type="hidden" name="eok2" value="" />
+		<input type="hidden" name="pg" value="0" />
+		<div class="body" id="search_body">
+			<div id="search_msg" class="msg_red" style="display: none"></div>
+			<div class="fm1">
+				<table class="fmT1">
+					<tbody>
+						<tr class="w_eki">
+							<td class="d1 d_eki">
+								<div class="ekiin" style="z-index: 202" id="ekIn1">
+									<input
+										type="text"
+										id="eki1_in"
+										name="eki1"
+										value=""
+										size="40"
+										maxlength="200"
+										tabindex="1"
+										placeholder=" 駅、スポット、バス停、住所"
+										autocomplete="off"
+									/>
+								</div>
+							</td>
+							<td rowspan="2" class="d2" width="60px">
+								<input type="hidden" name="Cmap1" value="" />
+								<span id="chFromTo">駅を入替</span>
+							</td>
+						</tr>
+						<tr class="w_eki">
+							<th><label for="eki2_in">到着</label></th>
+							<td class="d1 d_eki">
+								<div class="ekiin" style="z-index: 201" id="ekIn2">
+									<input
+										type="text"
+										id="eki2_in"
+										name="eki2"
+										value=""
+										size="40"
+										maxlength="200"
+										tabindex="1"
+										placeholder=" 駅、スポット、バス停、住所"
+										autocomplete="off"
+									/>
+								</div>
+							</td>
+						</tr>
+						<tr class="w_date2" id="IdJkDate2">
+							<td class="d1" colspan="2">
+								<span id="id_cway">
+									<input
+										type="radio"
+										id="Cway1"
+										name="Cway"
+										value="0"
+										tabindex="3"
+										class="rd"
+										checked="checked"
+									/><label for="Cway1">出発</label>
+									<input
+										type="radio"
+										id="Cway2"
+										name="Cway"
+										value="1"
+										tabindex="3"
+										class="rd"
+									/><label for="Cway2">到着</label>
+									<input
+										type="radio"
+										id="Cway3"
+										name="Cway"
+										value="2"
+										tabindex="3"
+										class="rd"
+									/><label for="Cway3">始発</label>
+									<input
+										type="radio"
+										id="Cway4"
+										name="Cway"
+										value="3"
+										tabindex="3"
+										class="rd"
+									/><label for="Cway4">終電</label>
+								</span>
+							</td>
+						</tr>
+						<tr class="w_ic" id="IdJkIc">
+							<th>運賃</th>
+							<td class="d1" colspan="2">
+								<div style="float: left">
+									<input
+										type="radio"
+										id="Cfp1"
+										name="Cfp"
+										value="1"
+										tabindex="3"
+										class="rd"
+										checked="checked"
+									/><label for="Cfp1">ICカード利用</label>
+									<input
+										type="radio"
+										id="Cfp2"
+										name="Cfp"
+										value="2"
+										tabindex="3"
+										class="rd"
+									/><label for="Cfp2">切符利用</label>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="sbmt">
+				<input
+					type="submit"
+					name="S"
+					value="検索"
+					class="btn search"
+					tabindex="10"
+				/>
+			</div>
+		</div>
+		<div class="footer"></div>
+	</fieldset>
+</form>
