@@ -2,31 +2,50 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Document</title>
 </head>
 
+<?php
+/*
+	https://www.jorudan.co.jp/norikae/cgi/nori.cgi?
+	// fm_nori
+	rf=top&
+	eok1=R-&
+	eok2=R-&
+	pg=0&
+	eki1=浜松&
+	Cmap1=&
+	eki2=名古屋&
+	Dyy=2022&
+	Dmm=5&
+	Ddd=17&
+	Dhh=5&
+	Dmn1=1&
+	Dmn2=8&
+	Cway=0& // * 4
+	Cfp=1&  // * 2
+	Czu=2&
+	S=検索&
+  // Sop
+	Csg=1
+
+	18 + (4 - 1) + 2 + 1 = 24
+ */
+
+?>
+
 <body>
-	<form action="https://www.jorudan.co.jp/norikae/cgi/nori.cgi">
+	<form action="/norikae/cgi/nori.cgi" method="get" name="fm_nori" id="fm_nori" class="fmmd_Normal">
 		<input type="hidden" name="rf" value="top" />
 		<input type="hidden" name="eok1" value="" />
 		<input type="hidden" name="eok2" value="" />
 		<input type="hidden" name="pg" value="0" />
-
-		<!-- <input type="text" id="eki1_in" name="eki1" value="" size="40" maxlength="200" tabindex="1" placeholder=" 駅、スポット、バス停、住所" autocomplete="off" /> -->
-		<select name="eki1" id="">
-			<option value="浜松">浜松</option>
-		</select>
-
+		<input type="text" id="eki1_in" name="eki1" value="" size="40" maxlength="200" tabindex="1" placeholder=" 駅、スポット、バス停、住所" autocomplete="off" />
 		<input type="hidden" name="Cmap1" value="" />
-
-		<!-- <input type="text" id="eki2_in" name="eki2" value="" size="40" maxlength="200" tabindex="1" placeholder=" 駅、スポット、バス停、住所" autocomplete="off" /> -->
-		<select name="eki2" id="">
-			<option value="名古屋">名古屋</option>
-		</select>
-
+		<input type="text" id="eki2_in" name="eki2" value="" size="40" maxlength="200" tabindex="1" placeholder=" 駅、スポット、バス停、住所" autocomplete="off" />
 		<select id="Dyy_slc" name="Dyy" size="1" tabindex="2">
 			<option value="2021">2021年</option>
 			<option value="2022" selected="selected">2022年</option>
@@ -67,6 +86,12 @@
 		<input type="radio" id="Cfp2" name="Cfp" value="2" tabindex="3" class="rd" /><label for="Cfp2">切符利用</label>
 
 		<input type="submit" name="S" value="検索" class="btn search" tabindex="10" />
+		<input type="submit" name="Sop" value="経由駅・検索条件" class="btn dtl" onclick="noChck()" tabindex="10" />
+		<span id="ck_sg">
+			<input type="checkbox" name="Csg" id="Csg" value="1" tabindex="100" class="ckb" onclick="ekIn.onoff('off')" checked="" />
+			<label for="Csg">入力予測機能</label>
+		</span>
+		<div class="footer"></div>
 	</form>
 </body>
 

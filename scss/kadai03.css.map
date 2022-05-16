@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EAEvB,gBAAgB,EAAE,OAAO;CAMzB;;AAVD,AAMC,IANG,CAMH,CAAC,CAAC;EACD,YAAY,EAAE,GAAG;EACjB,WAAW,EAAE,GAAG,CAAC,KAAK,CAAC,OAAiB;CACxC",
     "sources": [
         "kadai03.scss"
     ],

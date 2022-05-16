@@ -22,7 +22,7 @@ if (!empty($to)) {
 		echo "<script>alert('送信に成功しました');</script>";
 		// リロードによる多重送信を防ぐ
 		echo "<script>location.href='kadai03.php';</script>";
-		exit;
+		// exit;
 	} else {
 		echo "<script>alert('送信に失敗しました');</script>";
 	}
@@ -49,15 +49,20 @@ if (!empty($to)) {
 		</div>
 	</header>
 	<main>
-		<form action="./kadai03.php" method="post">
-			<input type="hidden" name="been" value="1" />
-			<input type="email" name="to" id="" placeholder="宛先@gmail.com" />
-			<br />
-			<input type="text" name="subject" id="" placeholder="タイトル">
-			<br />
-			<textarea name="body" id="" cols="30" rows="10"></textarea>
-			<button type="submit">メールを送る</button>
-		</form>
+		<section class="mail-form">
+			<form action="./kadai03.php" method="post">
+				<p>宛先</p>
+				<input type="email" name="to" id="" placeholder="宛先@gmail.com" />
+				<br />
+				<p>題名</p>
+				<input type="text" name="subject" id="" placeholder="タイトル">
+				<br />
+				<p>本文</p>
+				<textarea name="body" id="" cols="30" rows="10"></textarea>
+				<br />
+				<button type="submit">メールを送る</button>
+			</form>
+		</section>
 	</main>
 </body>
 
