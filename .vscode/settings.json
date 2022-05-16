@@ -1,5 +1,6 @@
 {
-	"cSpell.words": ["kadai", "MPLUS", "takesi"],
+	"cSpell.words": ["hamako", "kadai", "MPLUS", "takesi"],
 	"php.executablePath": "/usr/local/bin/php",
-	"php.validate.executablePath": "/usr/local/bin/php"
+	"php.validate.executablePath": "/usr/local/bin/php",
+	"liveServer.settings.useWebExt": true
 }
