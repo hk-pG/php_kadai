@@ -1,3 +1,10 @@
+<?php
+$now = new DateTime('now');
+echo $year = date('Y');
+
+$display_years = [$year - 1, $year, $year];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,9 +35,15 @@
 		</select>
 
 		<select id="Dyy_slc" name="Dyy" size="1" tabindex="2">
-			<option value="2021">2021年</option>
-			<option value="2022" selected="selected">2022年</option>
-			<option value="2023">2023年</option>
+			<?php
+			foreach ($display_years as $index => $year) {
+				if ($year == date('Y')) {
+					echo "<option value=\"$year\" selected=\"selected\">$year.年</option>";
+				} else {
+					echo "<option value=\"$year\" >$year.年</option>";
+				}
+			}
+			?>
 		</select>
 
 		<select id="Dmm_slc" name="Dmm" size="1" tabindex="2">
