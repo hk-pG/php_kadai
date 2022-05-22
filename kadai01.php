@@ -6,29 +6,29 @@ $is_calc_success = true;
 
 
 switch ($operator) {
-	case '+':
-		$z = $x + $y;
-		break;
+    case '+':
+        $z = $x + $y;
+        break;
 
-	case '-':
-		$z = $x - $y;
-		break;
+    case '-':
+        $z = $x - $y;
+        break;
 
-	case '*':
-		$z = $x * $y;
-		break;
+    case '*':
+        $z = $x * $y;
+        break;
 
-	case '/':
-		if ($y == 0) {
-			$is_calc_success = false;
-		} else {
-			$z = $x / $y;
-		}
-		break;
+    case '/':
+        if ($y == 0) {
+            $is_calc_success = false;
+        } else {
+            $z = $x / $y;
+        }
+        break;
 
-	default:
-		$z = $x + $y;
-		break;
+    default:
+        $z = $x + $y;
+        break;
 }
 ?>
 
