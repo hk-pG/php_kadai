@@ -1,4 +1,136 @@
-.time-input-container {
-	display: flex;
-	flex-direction: row;
+@import './liner.scss';
+@import './fonts.scss';
+@import './animations.scss';
+
+$cloud-color: rgb(257, 251, 251);
+$border-color: #ccc;
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: #cce6fd;
+  font-family: M_PLUS_Rounded_1c_Regular;
+}
+
+.btn {
+  padding: 5%;
+  margin: 0;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+.btn-close {
+  background-color: #34abfa;
+  border: 1px solid $border-color;
+  color: #fff;
+}
+
+.btn-open {
+  background-color: #f5f5f5;
+  border: 1px solid $border-color;
+  color: #333;
+  animation: 0.5s rotate;
+}
+
+.non-active {
+  // display: none;
+  user-select: none;
+  opacity: 0;
+}
+
+select {
+  padding: 0.5em;
+  border-radius: 20px;
+  font-family: M_PLUS_Rounded_1c_Regular;
+}
+
+header {
+  h1 {
+    font-size: 2.5rem;
+    font-family: M_PLUS_Rounded_1c_Black;
+    color: #333;
+    margin: 0;
+  }
+
+  .header-container {
+    padding: 10px 20px;
+  }
+
+  .spikes {
+    position: relative;
+    background: $cloud-color;
+  }
+
+  .spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 100%;
+    z-index: -1;
+    display: block;
+    height: 50px;
+    background-size: 50px 100%;
+    background-image: linear-gradient(135deg, $cloud-color 25%, transparent 25%),
+      linear-gradient(225deg, $cloud-color 25%, transparent 25%);
+    background-position: 0 0;
+  }
+}
+
+main {
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-evenly;
+
+  form {
+    p {
+      margin: 0;
+    }
+
+    .user-input {
+      .input-block {
+        padding: 1.2em;
+      }
+
+      .time-input {
+        .time-input-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .datetime-local {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 5em;
+
+            #datetime {
+              // select element
+              display: block;
+              margin-bottom: 5px;
+            }
+          }
+
+          .datetime-separated {
+            transition: 0.2s;
+
+            select {
+              margin: 5px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

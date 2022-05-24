@@ -87,13 +87,35 @@
             });
         });
     }
-    var stationFrom = document.getElementById('station-from');
-    var stationTo = document.getElementById('station-to');
     var form = document.getElementById('form');
+    var stationFrom = document.getElementById('station-from');
+    var stationTo = document.getElementById('station-to'); /* */
     // 出発駅と到着駅が同じ場合はエラー
-    if (stationFrom instanceof HTMLSelectElement &&
-        stationTo instanceof HTMLSelectElement &&
-        form instanceof HTMLFormElement) {
-        cancelFormSubmit(form, [stationFrom, stationTo]);
-    }
+    cancelFormSubmit(form, [stationFrom, stationTo]);
+    var timeInputsToggleButton = document.getElementById('time-inputs-toggle-button');
+    var separatedInputs = document.getElementById('separated');
+    timeInputsToggleButton.addEventListener('click', function () {
+        // もしクラスに'btn-close'があれば削除し、'btn-open'を追加する
+        if (timeInputsToggleButton.classList.contains('btn-close')) {
+            timeInputsToggleButton.classList.remove('btn-close');
+            timeInputsToggleButton.classList.add('btn-open');
+            timeInputsToggleButton.textContent = '個別入力を閉じる';
+        }
+        else if (timeInputsToggleButton.classList.contains('btn-open')) {
+            // もしクラスに'btn-open'があれば削除し、'btn-close'を追加する
+            timeInputsToggleButton.classList.remove('btn-open');
+            timeInputsToggleButton.classList.add('btn-close');
+            timeInputsToggleButton.textContent = '個別入力を開く';
+        }
+        // separatedに'non-active'があれば削除し、'active'を追加する
+        if (separatedInputs.classList.contains('non-active')) {
+            separatedInputs.classList.remove('non-active');
+            separatedInputs.classList.add('active');
+        }
+        else if (separatedInputs.classList.contains('active')) {
+            // separatedに'active'があれば削除し、'non-active'を追加する
+            separatedInputs.classList.remove('active');
+            separatedInputs.classList.add('non-active');
+        }
+    });
 })();
