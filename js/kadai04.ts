@@ -36,12 +36,23 @@
   const monthSelect = document.getElementById('Dmm_slc') as HTMLSelectElement;
   const daySelect = document.getElementById('Ddd_slc') as HTMLSelectElement;
   const hourSelect = document.getElementById('Dhh_slc') as HTMLSelectElement;
+
   const minuteSelect1 = document.getElementById(
     'Dmn1_slc',
   ) as HTMLSelectElement;
+
   const minuteSelect2 = document.getElementById(
     'Dmn2_slc',
   ) as HTMLSelectElement;
+
+  const splitInputs = [
+    yearSelect,
+    monthSelect,
+    daySelect,
+    hourSelect,
+    minuteSelect1,
+    minuteSelect2,
+  ];
 
   // datetime -> inputs
   if (datetimeInput instanceof HTMLInputElement) {
@@ -72,6 +83,27 @@
           minuteSelect2.value = minute.toString().slice(1, 2);
         }
       }
+    });
+
+    splitInputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        const year = yearSelect.value;
+        const month = monthSelect.value;
+        const day = daySelect.value;
+        const hour = hourSelect.value;
+        const minute1 = minuteSelect1.value;
+        const minute2 = minuteSelect2.value;
+        console.log('INPUT : ', input);
+        {
+          // year, month, day, hour, minute1, minute2 -> datetime-local
+          const time = `${year}-${month.padStart(2, '0')}-${day.padStart(
+            2,
+            '0',
+          )}T${hour.padStart(2, '0')}:${minute1}${minute2}`;
+          console.log(time);
+          datetimeInput.value = time;
+        }
+      });
     });
   }
 

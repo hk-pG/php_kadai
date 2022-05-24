@@ -32,6 +32,14 @@
     var hourSelect = document.getElementById('Dhh_slc');
     var minuteSelect1 = document.getElementById('Dmn1_slc');
     var minuteSelect2 = document.getElementById('Dmn2_slc');
+    var splitInputs = [
+        yearSelect,
+        monthSelect,
+        daySelect,
+        hourSelect,
+        minuteSelect1,
+        minuteSelect2,
+    ];
     // datetime -> inputs
     if (datetimeInput instanceof HTMLInputElement) {
         datetimeInput.addEventListener('input', function (e) {
@@ -60,6 +68,23 @@
                     minuteSelect2.value = minute.toString().slice(1, 2);
                 }
             }
+        });
+        splitInputs.forEach(function (input) {
+            input.addEventListener('input', function () {
+                var year = yearSelect.value;
+                var month = monthSelect.value;
+                var day = daySelect.value;
+                var hour = hourSelect.value;
+                var minute1 = minuteSelect1.value;
+                var minute2 = minuteSelect2.value;
+                console.log('INPUT : ', input);
+                {
+                    // year, month, day, hour, minute1, minute2 -> datetime-local
+                    var time = "".concat(year, "-").concat(month.padStart(2, '0'), "-").concat(day.padStart(2, '0'), "T").concat(hour.padStart(2, '0'), ":").concat(minute1).concat(minute2);
+                    console.log(time);
+                    datetimeInput.value = time;
+                }
+            });
         });
     }
     var stationFrom = document.getElementById('station-from');
