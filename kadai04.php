@@ -13,7 +13,7 @@ $stations = [
 	"浜松",
 	"名古屋",
 	"小沢渡",
-]
+];
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +123,6 @@ $stations = [
 					<!-- <span id="slc_times">&nbsp; -->
 
 					<div class="time">
-						<input type="time" name="" id="time" value="<?= $hour . ":" . $minute ?>" />
 
 						<select id="Dhh_slc" name="Dhh" size="1" tabindex="2">
 							<!-- <option value="4">4</option> -->

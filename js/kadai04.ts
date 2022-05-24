@@ -1,86 +1,10 @@
 'use strict';
 (() => {
-  const splitTimeFormatByInput = (inputTimeFormat: string) => {
-    const timeFormat = inputTimeFormat.split(':');
-    // remove zero padding
-    const hour = timeFormat[0].replace(/^0/, '');
-    const minute = timeFormat[1].replace(/^0/, '');
-
-    return { hour, minute };
-  };
-
-  const syncInputToSelect = (
-    timeInput: unknown,
-    hourSelect: unknown,
-    minuteSelect1: unknown,
-    minuteSelect2: unknown,
-  ) => {
-    if (
-      timeInput instanceof HTMLInputElement &&
-      hourSelect instanceof HTMLSelectElement &&
-      minuteSelect1 instanceof HTMLSelectElement &&
-      minuteSelect2 instanceof HTMLSelectElement
-    ) {
-      timeInput?.addEventListener('input', () => {
-        // get hour and minute from input(type=time)
-        let time = splitTimeFormatByInput(timeInput.value);
-        let minuteTop = '0';
-        let minuteBottom = '0';
-
-        let { hour, minute } = time;
-
-        if (minute.length >= 2) {
-          minuteTop = minute.toString().charAt(0);
-          minuteBottom = minute.toString().charAt(1);
-        } else {
-          minuteBottom = minute.toString().charAt(0);
-        }
-
-        if (hour == '00') {
-          hour = '0';
-        }
-
-        hourSelect.value = hour;
-        minuteSelect1.value = minuteTop;
-        minuteSelect2.value = minuteBottom;
-      });
-    }
-  };
-
-  const syncSelectToInput = (
-    hourSelect: unknown,
-    minuteSelect1: unknown,
-    minuteSelect2: unknown,
-    timeInput: unknown,
-  ) => {
-    if (
-      hourSelect instanceof HTMLSelectElement &&
-      minuteSelect1 instanceof HTMLSelectElement &&
-      minuteSelect2 instanceof HTMLSelectElement &&
-      timeInput instanceof HTMLInputElement
-    ) {
-      const makeTimeStr = () => {
-        let hour = hourSelect.value;
-        if (hour.length <= 1) {
-          hour = '0' + hour;
-        }
-        const timeStr = `${hour}:${minuteSelect1.value}${minuteSelect2.value}`;
-        timeInput.value = timeStr;
-        timeInput.value = timeStr;
-      };
-
-      hourSelect.addEventListener('change', makeTimeStr);
-      minuteSelect1.addEventListener('change', makeTimeStr);
-      minuteSelect2.addEventListener('change', makeTimeStr);
-    }
-  };
-
   const cancelFormSubmit = (
     form: unknown,
     [...inputs]: HTMLSelectElement[],
     errorMsg: string = '入力した値が重複しています',
   ) => {
-    console.table(inputs);
     if (
       form instanceof HTMLFormElement &&
       inputs.every((input) => input instanceof HTMLSelectElement)
@@ -96,25 +20,71 @@
     }
   };
 
-  const main = () => {
-    const timeInput: unknown = document.getElementById('time');
-    const hourSelect = document.getElementById('Dhh_slc');
-    const minuteSelect1 = document.getElementById('Dmn1_slc');
-    const minuteSelect2 = document.getElementById('Dmn2_slc');
-    syncInputToSelect(timeInput, hourSelect, minuteSelect1, minuteSelect2);
-    syncSelectToInput(hourSelect, minuteSelect1, minuteSelect2, timeInput);
-
-    const stationFrom = document.getElementById('station-from');
-    const stationTo = document.getElementById('station-to');
-    const form = document.getElementById('form');
-    if (
-      stationFrom instanceof HTMLSelectElement &&
-      stationTo instanceof HTMLSelectElement &&
-      form instanceof HTMLFormElement
-    ) {
-      cancelFormSubmit(form, [stationFrom, stationTo]);
-    }
+  /**
+   * @param {HTMLFormElement} form
+   *  @description Dateオブジェクトから'2022-06-09T07:14:00'のような文字列を生成する
+   */
+  const convertDateToIso = (date: Date) => {
+    const shift = date.getTime() + 9 * 60 * 60 * 1000;
+    const time = new Date(shift).toISOString().split('.')[0];
+    return time;
   };
 
-  main();
+  // get elements
+  const datetimeInput = document.getElementById('datetime') as HTMLInputElement;
+  const yearSelect = document.getElementById('Dyy_slc') as HTMLSelectElement;
+  const monthSelect = document.getElementById('Dmm_slc') as HTMLSelectElement;
+  const daySelect = document.getElementById('Ddd_slc') as HTMLSelectElement;
+  const hourSelect = document.getElementById('Dhh_slc') as HTMLSelectElement;
+  const minuteSelect1 = document.getElementById(
+    'Dmn1_slc',
+  ) as HTMLSelectElement;
+  const minuteSelect2 = document.getElementById(
+    'Dmn2_slc',
+  ) as HTMLSelectElement;
+
+  // datetime -> inputs
+  if (datetimeInput instanceof HTMLInputElement) {
+    datetimeInput.addEventListener('input', (e) => {
+      const date = new Date(datetimeInput.value);
+      const isoTime = convertDateToIso(date);
+      console.log(isoTime);
+
+      {
+        // datetime-local -> year, month, day, hour, minute
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        // set values
+        yearSelect.value = year.toString();
+        monthSelect.value = month.toString();
+        daySelect.value = day.toString();
+        hourSelect.value = hour.toString();
+
+        // 分は上位と下位に分けて設定する
+        if (minute.toString().length === 1) {
+          minuteSelect1.value = '0';
+          minuteSelect2.value = minute.toString();
+        } else {
+          minuteSelect1.value = minute.toString().slice(0, 1);
+          minuteSelect2.value = minute.toString().slice(1, 2);
+        }
+      }
+    });
+  }
+
+  const stationFrom = document.getElementById('station-from');
+  const stationTo = document.getElementById('station-to');
+  const form = document.getElementById('form');
+
+  // 出発駅と到着駅が同じ場合はエラー
+  if (
+    stationFrom instanceof HTMLSelectElement &&
+    stationTo instanceof HTMLSelectElement &&
+    form instanceof HTMLFormElement
+  ) {
+    cancelFormSubmit(form, [stationFrom, stationTo]);
+  }
 })();
