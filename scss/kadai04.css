@@ -7,6 +7,7 @@ body {
   margin: 5% 0 0 100%;
   position: absolute;
   top: 60px;
+  z-index: -1;
 }
 
 .cloud:before,
@@ -385,6 +386,11 @@ body {
       -ms-user-select: none;
           user-select: none;
   opacity: 0;
+}
+
+#submit {
+  background-color: #ddd78d;
+  padding: 1em 2em;
 }
 
 select {
