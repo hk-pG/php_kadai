@@ -11,9 +11,9 @@
 <body>
   <?php if (empty($_GET['a']) || empty($_GET['b'])) : ?>
     <form action="./test02.php" method="get">
-      <input type="text" name="a" />
+      <input type="text" name="a" required />
       +
-      <input type="text" name="b" />
+      <input type="text" name="b" required />
       <input type="submit" value="答え" />
     </form>
   <?php else : ?>

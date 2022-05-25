@@ -1,8 +1,8 @@
 'use strict';
 (function () {
-    var cancelFormSubmit = function (form, _a, errorMsg) {
+    var cancelFormSubmit = function (form, _a) {
         var inputs = _a.slice(0);
-        if (errorMsg === void 0) { errorMsg = '入力した値が重複しています'; }
+        // もしエラーがあれば、メッセージを表示する
         if (form instanceof HTMLFormElement &&
             inputs.every(function (input) { return input instanceof HTMLSelectElement; })) {
             form.addEventListener('submit', function (e) {
@@ -10,7 +10,7 @@
                 var inputValueSet = new Set(inputValueStrings);
                 if (inputValueStrings.length !== inputValueSet.size) {
                     e.preventDefault();
-                    alert(errorMsg);
+                    alert('出発地と目的地は異なる場所を選択してください');
                 }
             });
         }
@@ -87,35 +87,38 @@
             });
         });
     }
+    var timeInputToggle = function () {
+        var timeInputsToggleButton = document.getElementById('time-inputs-toggle-button');
+        var separatedInputs = document.getElementById('separated');
+        timeInputsToggleButton.addEventListener('click', function () {
+            // もしクラスに'btn-close'があれば削除し、'btn-open'を追加する
+            if (timeInputsToggleButton.classList.contains('btn-close')) {
+                timeInputsToggleButton.classList.remove('btn-close');
+                timeInputsToggleButton.classList.add('btn-open');
+                timeInputsToggleButton.textContent = '個別入力を閉じる';
+            }
+            else if (timeInputsToggleButton.classList.contains('btn-open')) {
+                // もしクラスに'btn-open'があれば削除し、'btn-close'を追加する
+                timeInputsToggleButton.classList.remove('btn-open');
+                timeInputsToggleButton.classList.add('btn-close');
+                timeInputsToggleButton.textContent = '個別入力を開く';
+            }
+            // separatedに'non-active'があれば削除し、'active'を追加する
+            if (separatedInputs.classList.contains('non-active')) {
+                separatedInputs.classList.remove('non-active');
+                separatedInputs.classList.add('active');
+            }
+            else if (separatedInputs.classList.contains('active')) {
+                // separatedに'active'があれば削除し、'non-active'を追加する
+                separatedInputs.classList.remove('active');
+                separatedInputs.classList.add('non-active');
+            }
+        });
+    };
     var form = document.getElementById('form');
     var stationFrom = document.getElementById('station-from');
     var stationTo = document.getElementById('station-to'); /* */
     // 出発駅と到着駅が同じ場合はエラー
     cancelFormSubmit(form, [stationFrom, stationTo]);
-    var timeInputsToggleButton = document.getElementById('time-inputs-toggle-button');
-    var separatedInputs = document.getElementById('separated');
-    timeInputsToggleButton.addEventListener('click', function () {
-        // もしクラスに'btn-close'があれば削除し、'btn-open'を追加する
-        if (timeInputsToggleButton.classList.contains('btn-close')) {
-            timeInputsToggleButton.classList.remove('btn-close');
-            timeInputsToggleButton.classList.add('btn-open');
-            timeInputsToggleButton.textContent = '個別入力を閉じる';
-        }
-        else if (timeInputsToggleButton.classList.contains('btn-open')) {
-            // もしクラスに'btn-open'があれば削除し、'btn-close'を追加する
-            timeInputsToggleButton.classList.remove('btn-open');
-            timeInputsToggleButton.classList.add('btn-close');
-            timeInputsToggleButton.textContent = '個別入力を開く';
-        }
-        // separatedに'non-active'があれば削除し、'active'を追加する
-        if (separatedInputs.classList.contains('non-active')) {
-            separatedInputs.classList.remove('non-active');
-            separatedInputs.classList.add('active');
-        }
-        else if (separatedInputs.classList.contains('active')) {
-            // separatedに'active'があれば削除し、'non-active'を追加する
-            separatedInputs.classList.remove('active');
-            separatedInputs.classList.add('non-active');
-        }
-    });
+    timeInputToggle();
 })();

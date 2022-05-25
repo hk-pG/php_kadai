@@ -1,10 +1,11 @@
 'use strict';
+
 (() => {
   const cancelFormSubmit = (
     form: unknown,
     [...inputs]: HTMLSelectElement[],
-    errorMsg: string = '入力した値が重複しています',
   ) => {
+    // もしエラーがあれば、メッセージを表示する
     if (
       form instanceof HTMLFormElement &&
       inputs.every((input) => input instanceof HTMLSelectElement)
@@ -14,7 +15,7 @@
         const inputValueSet = new Set(inputValueStrings);
         if (inputValueStrings.length !== inputValueSet.size) {
           e.preventDefault();
-          alert(errorMsg);
+          alert('出発地と目的地は異なる場所を選択してください');
         }
       });
     }
@@ -107,6 +108,40 @@
     });
   }
 
+  const timeInputToggle = () => {
+    const timeInputsToggleButton = document.getElementById(
+      'time-inputs-toggle-button',
+    ) as HTMLButtonElement;
+
+    const separatedInputs = document.getElementById(
+      'separated',
+    ) as HTMLDivElement;
+
+    timeInputsToggleButton.addEventListener('click', () => {
+      // もしクラスに'btn-close'があれば削除し、'btn-open'を追加する
+      if (timeInputsToggleButton.classList.contains('btn-close')) {
+        timeInputsToggleButton.classList.remove('btn-close');
+        timeInputsToggleButton.classList.add('btn-open');
+        timeInputsToggleButton.textContent = '個別入力を閉じる';
+      } else if (timeInputsToggleButton.classList.contains('btn-open')) {
+        // もしクラスに'btn-open'があれば削除し、'btn-close'を追加する
+        timeInputsToggleButton.classList.remove('btn-open');
+        timeInputsToggleButton.classList.add('btn-close');
+        timeInputsToggleButton.textContent = '個別入力を開く';
+      }
+
+      // separatedに'non-active'があれば削除し、'active'を追加する
+      if (separatedInputs.classList.contains('non-active')) {
+        separatedInputs.classList.remove('non-active');
+        separatedInputs.classList.add('active');
+      } else if (separatedInputs.classList.contains('active')) {
+        // separatedに'active'があれば削除し、'non-active'を追加する
+        separatedInputs.classList.remove('active');
+        separatedInputs.classList.add('non-active');
+      }
+    });
+  };
+
   const form = document.getElementById('form') as HTMLFormElement;
 
   const stationFrom = document.getElementById(
@@ -120,35 +155,5 @@
   // 出発駅と到着駅が同じ場合はエラー
   cancelFormSubmit(form, [stationFrom, stationTo]);
 
-  const timeInputsToggleButton = document.getElementById(
-    'time-inputs-toggle-button',
-  ) as HTMLButtonElement;
-
-  const separatedInputs = document.getElementById(
-    'separated',
-  ) as HTMLDivElement;
-
-  timeInputsToggleButton.addEventListener('click', () => {
-    // もしクラスに'btn-close'があれば削除し、'btn-open'を追加する
-    if (timeInputsToggleButton.classList.contains('btn-close')) {
-      timeInputsToggleButton.classList.remove('btn-close');
-      timeInputsToggleButton.classList.add('btn-open');
-      timeInputsToggleButton.textContent = '個別入力を閉じる';
-    } else if (timeInputsToggleButton.classList.contains('btn-open')) {
-      // もしクラスに'btn-open'があれば削除し、'btn-close'を追加する
-      timeInputsToggleButton.classList.remove('btn-open');
-      timeInputsToggleButton.classList.add('btn-close');
-      timeInputsToggleButton.textContent = '個別入力を開く';
-    }
-
-    // separatedに'non-active'があれば削除し、'active'を追加する
-    if (separatedInputs.classList.contains('non-active')) {
-      separatedInputs.classList.remove('non-active');
-      separatedInputs.classList.add('active');
-    } else if (separatedInputs.classList.contains('active')) {
-      // separatedに'active'があれば削除し、'non-active'を追加する
-      separatedInputs.classList.remove('active');
-      separatedInputs.classList.add('non-active');
-    }
-  });
+  timeInputToggle();
 })();

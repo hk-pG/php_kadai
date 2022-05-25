@@ -1,0 +1,3 @@
+rf=top&eok1=B&eok2=R&eki1=浜工高前〔遠州鉄道〕&eki2=浜松駅〔高速バス〕&Dyy=2022&Dmm=5&Ddd=26&Dhh=5&Dmn1=0&Dmn2=4&Cway=0&Cfp=1&Csg=1&Czu=2&S=検索
+
+rf=top&eok1=B&eok2=R&eki1=浜工高前〔遠州鉄道〕&eki2=浜松駅〔高速バス〕&Dyy=2022&Dmm=5&Ddd=26&Dhh=5&Dmn1=0&Dmn2=4&Cway=0&Cfp=1&Czu=1&Csg=2&S=検索

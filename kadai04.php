@@ -10,9 +10,9 @@ $minute = date('i');
 $display_years = [$year - 1, $year, $year + 1];
 
 $stations = [
-	"浜松",
-	"名古屋",
-	"小沢渡",
+	"浜松駅〔高速バス〕",
+	"名古屋〔西武バス〕",
+	"浜工高前〔遠州鉄道〕",
 ];
 ?>
 
@@ -38,8 +38,8 @@ $stations = [
 	<main class="flex justify-evenly">
 		<form action="https://www.jorudan.co.jp/norikae/cgi/nori.cgi" id="form">
 			<input type="hidden" name="rf" value="top" />
-			<input type="hidden" name="eok1" value="" />
-			<input type="hidden" name="eok2" value="" />
+			<input type="hidden" name="eok1" value="B" />
+			<input type="hidden" name="eok2" value="R" />
 			<input type="hidden" name="pg" value="0" />
 
 			<section class="user-input">
@@ -58,7 +58,7 @@ $stations = [
 					</select>
 				</div>
 
-				<input type="hidden" name="Cmap1" value="" />
+				<!-- <input type="hidden" name="Cmap1" value="" /> -->
 
 
 				<div class="station-to input-block">
@@ -214,7 +214,10 @@ $stations = [
 					</div>
 				</div>
 
-				<div class="input-block">
+				<div class="input-block submit-button-area">
+					<div class="non-active" id="dialog">出発駅と到着駅が重複しています</div>
+					<input type="hidden" name="Csg" id="Csg" value="1" tabindex="100" class="ckb" onclick="ekIn.onoff('off')" checked="">
+					<input type="hidden" id="Czu" name="Czu" size="1" value="2" tabindex="4">
 					<input type="submit" name="S" value="検索" class="btn search" id="submit" tabindex="10" />
 				</div>
 				<br />
@@ -241,7 +244,7 @@ $stations = [
 			</div>
 		</div>
 	</section>
-	<script src="./js/kadai04.js"></script>
+	<script src="./js/kadai04.js" type="module"></script>
 
 </body>
 

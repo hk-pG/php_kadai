@@ -37,33 +37,58 @@ if (!empty($to)) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>kadai03</title>
+	<script src="./mdl/material.min.js"></script>
+	<link rel="stylesheet" href="./mdl/material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="./scss/kadai03.css">
 </head>
 
 <body>
 	<header>
-		<div class="header-box">
-			<a href="./kadai03.php">
-				<img src="./scss/icons/mail_logo_title.png" alt="" />
-			</a>
-		</div>
+		<section class="header-container">
+			<h1>MAIL SENDER</h1>
+		</section>
 	</header>
+
 	<main>
 		<section class="mail-form">
 			<form action="./kadai03.php" method="post">
-				<p>宛先</p>
-				<input type="email" name="to" id="" placeholder="宛先@gmail.com" />
-				<br />
-				<p>題名</p>
-				<input type="text" name="subject" id="" placeholder="タイトル">
-				<br />
-				<p>本文</p>
-				<textarea name="body" id="" cols="30" rows="10"></textarea>
-				<br />
-				<button type="submit">メールを送る</button>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="email" id="sample3">
+					<label class="mdl-textfield__label" for="sample3">宛先</label>
+				</div>
+
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="sample3">
+					<label class="mdl-textfield__label" for="sample3">題名</label>
+				</div>
+
+				<div class="mdl-textfield mdl-js-textfield">
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+					<label class="mdl-textfield__label" for="sample5">本文</label>
+				</div>
+
+				<!-- Raised button with ripple -->
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					送信
+				</button>
+
 			</form>
 		</section>
 	</main>
+
+	<ul class='circles'>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </body>
 
 </html>
