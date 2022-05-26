@@ -8,6 +8,11 @@ body {
   background-color: #ced3dc;
 }
 
+.result {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -17,10 +22,6 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.header-btn {
-  padding: 5% 15px;
 }
 
 .btn {
@@ -38,6 +39,10 @@ h1 {
   &:active {
     transform: translateY(3px);
   }
+}
+
+.header-btn {
+  padding: 10% 2em;
 }
 
 .submit-btn {
@@ -60,7 +65,8 @@ header {
   padding: 20px 30px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
   h1 {
-    font-family: M_PLUS_Rounded_1c_Medium;
+    font-family: M_PLUS_Rounded_1c_Bold;
+    font-size: 3em;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
   }
 }

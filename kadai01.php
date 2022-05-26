@@ -34,7 +34,6 @@ switch ($operator) {
 }
 ?>
 
-</html>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -49,20 +48,28 @@ switch ($operator) {
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Calculator</h1>
-            <a href="./kadai01.html">
-                <button class="btn header-btn">
-                    もう一度計算する
-                </button>
-            </a>
-        </div>
-    </header>
+    <section class="result">
+
+        <header>
+            <div class="header-container">
+                <h1>Calculator</h1>
+                <a href="./kadai01.html">
+                    <button class="btn header-btn">
+                        もう一度計算する
+                    </button>
+                </a>
+            </div>
+        </header>
 
 
-    <canvas id="particle"></canvas>
+        <main>
+            <canvas id="particle"></canvas>
+        </main>
 
+        <footer>
+        </footer>
+
+    </section>
 
     <script src="./particle/jquery-3.6.0.min.js"></script>
     <script src="./particle/particleText.min.js"></script>

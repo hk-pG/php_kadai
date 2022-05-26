@@ -172,12 +172,17 @@
   font-family: M_PLUS_Rounded_1c_Regular;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
-  font-family: M_PLUS_Rounded_1c_Medium;
+  font-family: M_PLUS_Rounded_1c_Bold;
 }
 
 html {
-  overflow-y: hidden;
   min-height: 100%;
 }
 
@@ -190,6 +195,8 @@ body {
 header {
   -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: rgba(36, 41, 46, 0.9);
+  color: #fff;
 }
 
 header .header-container {
@@ -271,6 +278,7 @@ main form #sample5 {
 
 .circles li {
   position: absolute;
+  bottom: 0;
   display: block;
   list-style: none;
   width: 20px;
@@ -278,7 +286,6 @@ main form #sample5 {
   background: rgba(96, 183, 199, 0.3);
   -webkit-animation: rising 25s linear infinite;
           animation: rising 25s linear infinite;
-  bottom: calc(-150px - 40vh);
 }
 
 .circles li:nth-child(1) {

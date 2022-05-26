@@ -13,6 +13,7 @@ $stations = [
 	"浜松駅〔高速バス〕",
 	"名古屋〔西武バス〕",
 	"浜工高前〔遠州鉄道〕",
+	"丘珠空港〔空港連絡バス〕",
 ];
 ?>
 
@@ -23,7 +24,7 @@ $stations = [
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jorudan Local</title>
+	<title>kadai04</title>
 	<link rel="stylesheet" href="./scss/kadai04.css">
 </head>
 

@@ -1,7 +1,8 @@
 <?php
-$x = $_GET['a'];
-$y = $_GET['b'];
-$operator = $_GET['operator'];
+// $x = $_GET['a'];
+$x = isset($_GET['a']) ? $_GET['a'] : 0;
+$y = isset($_GET['b']) ? $_GET['b'] : 0;
+$operator = isset($_GET['operator']) ? $_GET['operator'] : '+';
 $is_calc_success = true;
 
 
@@ -75,18 +76,27 @@ switch ($operator) {
 			<link rel="stylesheet" href="./scss/kadai01.css" />
 			<title>答えは<?= $z ?></title>
 		</head>
-		<header>
-			<div class="header-container">
-				<h1>Calculator</h1>
-				<a href="./kadai02.php">
-					<button class="btn header-btn">
-						もう一度計算する
-					</button>
-				</a>
-			</div>
-		</header>
 
-		<canvas id="particle"></canvas>
+		<section class="result">
+
+			<header>
+				<div class="header-container">
+					<h1>Calculator</h1>
+					<a href="./kadai02.php">
+						<button class="btn header-btn">
+							もう一度計算する
+						</button>
+					</a>
+				</div>
+			</header>
+
+			<main>
+				<canvas id="particle"></canvas>
+			</main>
+
+			<footer></footer>
+
+		</section>
 
 		<script src="./particle/jquery-3.6.0.min.js"></script>
 		<script src="./particle/particleText.min.js"></script>
