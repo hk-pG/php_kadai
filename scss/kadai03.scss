@@ -16,24 +16,32 @@ html {
 
 body {
   min-height: 100%;
+  animation: fadeInRise 1s;
 }
 
 header {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   .header-container {
     padding: 0 3em;
+    display: flex;
+    animation: fadeIn 3s;
   }
 }
 
 main {
   display: flex;
   justify-content: center;
-  background-color: rgba(245, 248, 250, 0.5);
   padding: 30px;
 
   p {
     padding-left: 5px;
     border-left: 2px solid rgb(67, 135, 203);
+  }
+
+  .form-container {
+    background-color: rgba(210, 221, 228, 0.3);
+    padding: 10%;
+    border-radius: 50px;
   }
 
   form {

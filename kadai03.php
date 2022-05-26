@@ -7,6 +7,7 @@ $to = isset($_POST["to"]) ? $_POST["to"] : "";
 
 $from = "ei2030@hamako-ths.ed.jp";
 
+
 $result = false;
 if (!empty($to)) {
 	$result = mb_send_mail(
@@ -17,7 +18,7 @@ if (!empty($to)) {
 	);
 }
 
-echo "$to $subject $body";
+// echo "$to $subject $body";
 
 if (!empty($to)) {
 	if ($result) {
@@ -53,10 +54,10 @@ if (!empty($to)) {
 	</header>
 
 	<main>
-		<section class="mail-form">
+		<section class="form-container">
 			<form action="./kadai03.php" method="post">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="email" id="sample3" name="to">
+					<input required class="mdl-textfield__input" type="email" id="sample3" name="to">
 					<label class="mdl-textfield__label" for="sample3">宛先</label>
 				</div>
 

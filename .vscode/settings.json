@@ -11,15 +11,10 @@
     "norikae",
     "takesi"
   ],
-  "php.executablePath": "/usr/local/bin/php",
   "php.validate.executablePath": "/usr/local/bin/php",
-  "liveServer.settings.useWebExt": true,
+  // "liveServer.settings.useWebExt": true,
   "editor.fontSize": 13,
   "editor.tabSize": 2,
-  "php-cs-fixer.autoFixBySemicolon": true,
-  "php-cs-fixer.autoFixByBracket": true,
-  "php-cs-fixer.onsave": true,
-  "php-cs-fixer.formatHtml": true,
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   }

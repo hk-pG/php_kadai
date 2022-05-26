@@ -16,6 +16,7 @@ switch ($operator) {
 
     case '*':
         $z = $x * $y;
+        $operator = '×';
         break;
 
     case '/':
@@ -24,6 +25,7 @@ switch ($operator) {
         } else {
             $z = $x / $y;
         }
+        $operator = '÷';
         break;
 
     default:
@@ -32,21 +34,55 @@ switch ($operator) {
 }
 ?>
 
+</html>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>
-		<?= $is_calc_success ? "答えは" . $z : "計算に失敗しました" ?>
-	</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <?= $is_calc_success ? "答えは" . $z : "計算に失敗しました" ?>
+    </title>
+    <link rel="stylesheet" href="./scss/kadai01.css" />
 </head>
 
 <body>
-	<?= $is_calc_success ? "$x$operator$y=$z<br />" : "計算に失敗しました"  ?>
+    <header>
+        <div class="header-container">
+            <h1>Calculator</h1>
+            <a href="./kadai01.html">
+                <button class="btn header-btn">
+                    もう一度計算する
+                </button>
+            </a>
+        </div>
+    </header>
+
+
+    <canvas id="particle"></canvas>
+
+
+    <script src="./particle/jquery-3.6.0.min.js"></script>
+    <script src="./particle/particleText.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            //オプション付き
+            $('#particle').particleText({
+                text: '<?= $is_calc_success ? "$x$operator$y=$z" : "計算に失敗しました"  ?>', // 文字
+
+                number: 800,
+
+                colors: ['#000', '#f00'], // パーティクルの色を複数指定可能
+
+                speed: 'high', // slow, middle, high の3つから選んでください。
+
+
+            });
+        });
+    </script>
 </body>
 
 </html>

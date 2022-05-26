@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>kadai01</title>
-		<link rel="stylesheet" href="./scss/kadai01.css" />
-	</head>
-	<body>
-		<header>
-			<h1 class="logo">WEB上計算機</h1>
-		</header>
-		<form action="./kadai01.php" method="get">
-			<input type="text" name="a" required />
-			<br />
-			<select name="operator">
-				<option value="+">+</option>
-				<option value="-">-</option>
-				<option value="*">*</option>
-				<option value="/">/</option>
-			</select>
-			<br />
-			<input type="text" name="b" required />
-			<br />
-			<input type="submit" value="答え" />
-		</form>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kadai01</title>
+    <link rel="stylesheet" href="./scss/kadai01.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Calculator</h1>
+      </div>
+    </header>
+    <main>
+      <form action="./kadai01.php" method="get">
+        <input type="text" name="a" required />
+        <select name="operator">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <input type="text" name="b" required />
+        <input class="btn submit-btn" type="submit" value="答え" />
+      </form>
+    </main>
+  </body>
 </html>

@@ -20,6 +20,50 @@
   }
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInRise {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRise {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 @-webkit-keyframes fadeInUpFadeOutDown {
   0% {
     opacity: 0;
@@ -139,6 +183,8 @@ html {
 
 body {
   min-height: 100%;
+  -webkit-animation: fadeInRise 1s;
+          animation: fadeInRise 1s;
 }
 
 header {
@@ -148,6 +194,11 @@ header {
 
 header .header-container {
   padding: 0 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: fadeIn 3s;
+          animation: fadeIn 3s;
 }
 
 main {
@@ -157,13 +208,18 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(245, 248, 250, 0.5);
   padding: 30px;
 }
 
 main p {
   padding-left: 5px;
   border-left: 2px solid #4387cb;
+}
+
+main .form-container {
+  background-color: rgba(210, 221, 228, 0.3);
+  padding: 10%;
+  border-radius: 50px;
 }
 
 main form {
