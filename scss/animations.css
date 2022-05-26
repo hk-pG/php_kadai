@@ -64,7 +64,7 @@
             transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  50% {
+  70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
     opacity: 1;
@@ -82,7 +82,7 @@
             transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  50% {
+  70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
     opacity: 1;

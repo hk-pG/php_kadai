@@ -64,7 +64,7 @@
             transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  50% {
+  70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
     opacity: 1;
@@ -82,7 +82,7 @@
             transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  50% {
+  70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
     opacity: 1;
@@ -134,6 +134,16 @@ h1 {
 
 html {
   overflow-y: hidden;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+header {
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 header .header-container {
@@ -147,6 +157,8 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: rgba(245, 248, 250, 0.5);
+  padding: 30px;
 }
 
 main p {
@@ -207,7 +219,7 @@ main form #sample5 {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(96, 183, 199, 0.1);
+  background: rgba(96, 183, 199, 0.3);
   -webkit-animation: rising 25s linear infinite;
           animation: rising 25s linear infinite;
   bottom: calc(-150px - 40vh);
@@ -223,7 +235,7 @@ main form #sample5 {
           animation-duration: 20s;
   border-radius: 50%;
   border-top-left-radius: 0 !important;
-  background: rgba(47, 44, 92, 0.1);
+  background: rgba(47, 44, 92, 0.5);
 }
 
 .circles li:nth-child(2) {
@@ -275,7 +287,7 @@ main form #sample5 {
           animation-duration: 20s;
   border-radius: 50%;
   border-top-left-radius: 0 !important;
-  background: rgba(96, 183, 199, 0.1);
+  background: rgba(96, 183, 199, 0.4);
 }
 
 .circles li:nth-child(6) {
@@ -288,7 +300,7 @@ main form #sample5 {
           animation-duration: 25s;
   border-radius: 50%;
   border-top-left-radius: 0 !important;
-  background: rgba(114, 63, 145, 0.1);
+  background: rgba(114, 63, 145, 0.2);
 }
 
 .circles li:nth-child(7) {
@@ -327,7 +339,7 @@ main form #sample5 {
           animation-duration: 40s;
   border-radius: 50%;
   border-top-left-radius: 0 !important;
-  background: rgba(47, 44, 92, 0.1);
+  background: rgba(47, 44, 92, 0.3);
 }
 
 .circles li:nth-child(10) {
