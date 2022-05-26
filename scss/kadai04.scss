@@ -107,6 +107,16 @@ main {
   display: flex;
   justify-content: space-evenly;
   min-height: 100%;
+  background-image: linear-gradient(
+    to right top,
+    rgba(204, 230, 253, 0.2),
+    rgba(188, 207, 237, 0.2),
+    rgba(175, 184, 219, 0.2),
+    rgba(165, 160, 198, 0.2),
+    rgba(157, 137, 176, 0.2)
+  );
+  background-size: 200% 200%; /*サイズを大きくひきのばす*/
+  animation: bgGradient 20s ease infinite;
 
   form {
     background-color: rgba(213, 255, 243, 0.5);

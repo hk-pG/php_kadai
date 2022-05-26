@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   overflow-x: hidden;
 }
@@ -428,12 +429,12 @@ body {
   70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
     -webkit-transform: translateY(-120vh) rotate(720deg);
             transform: translateY(-120vh) rotate(720deg);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -446,12 +447,36 @@ body {
   70% {
     -webkit-transform: translateY(-60vh) rotate(360deg);
             transform: translateY(-60vh) rotate(360deg);
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
     -webkit-transform: translateY(-120vh) rotate(720deg);
             transform: translateY(-120vh) rotate(720deg);
-    opacity: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bgGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bgGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -571,6 +596,12 @@ main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   min-height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(204, 230, 253, 0.2)), color-stop(rgba(188, 207, 237, 0.2)), color-stop(rgba(175, 184, 219, 0.2)), color-stop(rgba(165, 160, 198, 0.2)), to(rgba(157, 137, 176, 0.2)));
+  background-image: linear-gradient(to right top, rgba(204, 230, 253, 0.2), rgba(188, 207, 237, 0.2), rgba(175, 184, 219, 0.2), rgba(165, 160, 198, 0.2), rgba(157, 137, 176, 0.2));
+  background-size: 200% 200%;
+  /*サイズを大きくひきのばす*/
+  -webkit-animation: bgGradient 20s ease infinite;
+          animation: bgGradient 20s ease infinite;
 }
 
 main form {
