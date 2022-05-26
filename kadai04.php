@@ -245,7 +245,8 @@ $stations = [
 			</div>
 		</div>
 	</section>
-	<script src="./js/kadai04.js" type="module"></script>
+	<!-- <script src="./js/kadai04.js" type="module"></script> -->
+	<script src="./js/kadai04.min.js" type="module"></script>
 
 </body>
 
