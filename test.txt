@@ -1,3 +1,1 @@
-rf=top&eok1=B&eok2=R&eki1=浜工高前〔遠州鉄道〕&eki2=浜松駅〔高速バス〕&Dyy=2022&Dmm=5&Ddd=26&Dhh=5&Dmn1=0&Dmn2=4&Cway=0&Cfp=1&Csg=1&Czu=2&S=検索
-
-rf=top&eok1=B&eok2=R&eki1=浜工高前〔遠州鉄道〕&eki2=浜松駅〔高速バス〕&Dyy=2022&Dmm=5&Ddd=26&Dhh=5&Dmn1=0&Dmn2=4&Cway=0&Cfp=1&Czu=1&Csg=2&S=検索
+ttps://www.jorudan.co.jp/norikae/cgi/nori.cgi?rf=top&eok1=S-E92034928%40POS124933831495856342&eok2=H-&pg=0&eki1=ホテルセレクトイン浜松駅前&Cmap1=&eki2=網走駅前〔高速バス〕&Dyy=2022&Dmm=5&Ddd=27&Dhh=20&Dmn1=0&Dmn2=0&Cway=0&Cfp=1&Czu=2&S=検索&Csg=1

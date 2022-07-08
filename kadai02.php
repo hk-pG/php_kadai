@@ -1,7 +1,6 @@
 <?php
-// $x = $_GET['a'];
-$x = isset($_GET['a']) ? $_GET['a'] : 0;
-$y = isset($_GET['b']) ? $_GET['b'] : 0;
+$x =  $_GET['a'];
+$y =  $_GET['b'];
 $operator = isset($_GET['operator']) ? $_GET['operator'] : '+';
 $is_calc_success = true;
 
@@ -56,14 +55,14 @@ switch ($operator) {
 		</header>
 		<main>
 			<form action="./kadai02.php" method="get">
-				<input type="text" name="a" required />
+				<input type="number" name="a" required />
 				<select name="operator">
 					<option value="+">+</option>
 					<option value="-">-</option>
 					<option value="*">*</option>
 					<option value="/">/</option>
 				</select>
-				<input type="text" name="b" required />
+				<input type="number" name="b" required />
 				<input class="btn submit-btn" type="submit" value="答え" />
 			</form>
 		</main>
